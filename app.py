@@ -32,7 +32,7 @@ DBNAME=os.environ.get('DBNAME', True)
 def home():
     """Render website's home page."""
     db=pg.DB(host=DBHOST, user=DBUSER, passwd=DBPASS, dbname=DBNAME)
-    query=db.query("select * from album")
+    query=db.query("select * from addresses")
     result_list = query.namedresult()
     return render_template('home.html',result_list=result_list)
 
